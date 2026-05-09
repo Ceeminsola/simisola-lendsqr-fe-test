@@ -1,0 +1,178 @@
+@use "../../../styles/abstracts/variables" as *;
+
+.sidebar {
+  width: 283px;
+
+  height: calc(100vh - 100px);
+
+  position: sticky;
+
+  top: 100px;
+
+  background: #ffffff;
+
+  overflow-y: auto;
+
+  padding: 30px 0 60px;
+
+  flex-shrink: 0;
+
+  scrollbar-width: none;
+
+  transition: transform 0.3s ease;
+
+  z-index: 200;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__organization,
+  &__dashboard,
+  li {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    height: 40px;
+
+    padding-left: 30px;
+
+    cursor: pointer;
+
+    position: relative;
+
+    transition:
+      background 0.25s ease,
+      color 0.25s ease;
+  }
+
+  &__organization {
+    margin-bottom: 20px;
+
+    span {
+      color: #213f7d;
+
+      font-size: 16px;
+
+      font-weight: 400;
+    }
+  }
+
+  &__dashboard {
+    margin-bottom: 25px;
+
+    span {
+      color: rgba(33, 63, 125, 0.8);
+
+      font-size: 16px;
+    }
+  }
+
+  &__section {
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    padding-left: 30px;
+
+    margin-bottom: 10px;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    color: #545f7d;
+
+    text-transform: uppercase;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    overflow: hidden;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      top: 0;
+
+      width: 3px;
+      height: 100%;
+
+      background: #39cdcc;
+
+      opacity: 0;
+
+      transition: opacity 0.25s ease;
+    }
+
+    span {
+      color: rgba(33, 63, 125, 0.6);
+
+      font-size: 16px;
+
+      font-weight: 400;
+
+      transition: color 0.25s ease;
+    }
+
+    &:hover {
+      background: rgba(57, 205, 204, 0.06);
+
+      &::before {
+        opacity: 1;
+      }
+
+      span {
+        color: #213f7d;
+      }
+    }
+
+    &.active {
+      background: rgba(57, 205, 204, 0.06);
+
+      &::before {
+        opacity: 1;
+      }
+
+      span {
+        color: #213f7d;
+
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+/* =========================
+   MOBILE SIDEBAR
+========================= */
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+
+    top: 100px;
+    left: 0;
+
+    transform: translateX(-100%);
+
+    width: 260px;
+
+    height: calc(100vh - 100px);
+
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+}

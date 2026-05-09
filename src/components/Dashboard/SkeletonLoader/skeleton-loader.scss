@@ -1,0 +1,39 @@
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.skeleton-table {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+  &__row {
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+
+    gap: 16px;
+  }
+
+  &__cell {
+    height: 16px;
+
+    border-radius: 4px;
+
+    background: #edf2f7;
+
+    animation: pulse 1.4s infinite ease-in-out;
+  }
+}
