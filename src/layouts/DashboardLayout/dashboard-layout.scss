@@ -1,0 +1,96 @@
+.dashboard-layout {
+  min-height: 100vh;
+
+  background: #fbfbfb;
+
+  position: relative;
+
+  &__body {
+    display: flex;
+
+    position: relative;
+  }
+
+  &__content {
+    flex: 1;
+
+    padding: 60px;
+
+    width: 100%;
+
+    overflow-x: hidden;
+  }
+
+  &__overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    z-index: 150;
+
+    animation: fadeIn 0.3s ease;
+  }
+
+  &__menu-btn {
+    display: none;
+
+    position: fixed;
+
+    left: 16px;
+    bottom: 20px;
+
+    width: 52px;
+    height: 52px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #39cdcc;
+
+    color: white;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    z-index: 300;
+
+    box-shadow: 0 10px 30px rgba(57, 205, 204, 0.35);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .dashboard-layout {
+    &__content {
+      padding: 40px 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-layout {
+    &__content {
+      padding: 24px 16px;
+    }
+
+    &__menu-btn {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
