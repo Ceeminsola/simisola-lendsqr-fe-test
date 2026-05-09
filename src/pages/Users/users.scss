@@ -1,0 +1,55 @@
+.users-page {
+  &__title {
+    font-size: 24px;
+
+    font-weight: 500;
+
+    color: #213f7d;
+
+    margin-bottom: 40px;
+  }
+
+  &__stats {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .users-page {
+    &__stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .users-page {
+    &__title {
+      font-size: 20px;
+
+      margin-bottom: 24px;
+    }
+
+    &__stats {
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .users-page {
+    &__stats {
+      grid-template-columns: 1fr;
+
+      gap: 12px;
+    }
+  }
+}
