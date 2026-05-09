@@ -1,73 +1,60 @@
-# React + TypeScript + Vite
+PROJECT TITLE: Lendsqr Frontend Assessment – Simisola Olubodun
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PROJECT OVERVIEW
+This project is a frontend implementation of a user management dashboard built as part of the Lendsqr engineering assessment.
+It simulates a fintech admin dashboard where administrators can view users, inspect user details, and manage user-related data through a structured interface.
 
-Currently, two official plugins are available:
+TECH STACK
+- React (Vite)
+- TypeScript
+- SCSS
+- React Router
+- Mock API (local data simulation)
+- Contextual component-based architecture
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+ARCHITECTURE
+The project follows a modular, feature-based architecture:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+src/
+ ├── components/   → Reusable UI components (tables, badges, pagination)
+ ├── pages/        → Application screens (Users, UserDetails, Login)
+ ├── services/     → Data fetching logic (mock API abstraction)
+ ├── mock/         → Local dataset simulating backend API
+ ├── routes/       → Application routing configuration
+ ├── layouts/      → Shared page layouts (Dashboard structure)
+ ├── styles/       → Global and shared styling system
+ ├── types/        → TypeScript interfaces and models
 
-## Expanding the ESLint configuration
+ DATA FLOW
+1. Mock API generates user dataset locally
+2. Service layer abstracts data access
+3. Pages consume service layer
+4. Components render UI based on structured props
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+FEATURES
+- Users dashboard with tabular data display
+- Dynamic user details page
+- Reusable UI components (Status badges, pagination, tables)
+- Modular routing system
+- Mock API simulating real backend behavior
+- Fully responsive UI structure
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+TESTING STRATEGY 
+Unit testing approach focuses on:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Data integrity validation (mock users)
+- Component rendering correctness
+- Page-level behavior (Users, UserDetails)
+- Positive and negative UI states (loading, empty, error)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🚀 HOW TO RUN PROJECT
+npm install
+npm run dev
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+📁 PROJECT HIGHLIGHTS
+- Clean separation of concerns (UI / Data / Logic)
+- Scalable folder structure
+- Mock backend simulation for realistic frontend workflow
+- Strong TypeScript type safety
