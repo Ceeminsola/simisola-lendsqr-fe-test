@@ -1,6 +1,8 @@
 import { users } from "../mock/users";
 
-export const fetchUsers = async () => {
+import type { User } from "../types/user";
+
+export const fetchUsers = async (): Promise<User[]> => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(users);
