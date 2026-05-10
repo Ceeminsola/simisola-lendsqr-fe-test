@@ -3,7 +3,7 @@ import "./stats-card.scss";
 interface StatsCardProps {
   icon: string;
   title: string;
-  value: string;
+  value: number | string;
 }
 
 const StatsCard = ({
