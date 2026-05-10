@@ -16,6 +16,7 @@ const AppRoutes = () => {
 
         {/* DASHBOARD */}
         <Route element={<DashboardLayout />}>
+          <Route path="/dashboard" element={<Placeholder />} />
           <Route path="/users" element={<Users />} />
           <Route path="/guarantors" element={<Placeholder />} />
           <Route path="/loans" element={<Placeholder />} />
