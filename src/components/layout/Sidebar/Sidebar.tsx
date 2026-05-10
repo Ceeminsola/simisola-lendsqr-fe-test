@@ -22,6 +22,8 @@ import preferencesIcon from "../../../assets/icons/preferences.svg";
 import pricingIcon from "../../../assets/icons/pricing.svg";
 import auditIcon from "../../../assets/icons/audit.svg";
 import arrowdownIcon from "../../../assets/icons/arrowdown.svg";
+import systemMessagesIcon from "../../../assets/icons/system.svg";
+import logoutIcon from "../../../assets/icons/logout.svg";
 
 import type { Dispatch, SetStateAction } from "react";
 
@@ -181,32 +183,54 @@ const Sidebar = ({
         </ul>
       </div>
 
-      {/* SETTINGS */}
+            {/* SETTINGS */}
       <div className="sidebar__section">
         <p className="sidebar__title">SETTINGS</p>
 
         <ul>
-          <li onClick={() => setSidebarOpen(false)}>
-            <img
-              src={preferencesIcon}
-              alt="preferences"
-            />
+          <li>
+            <img src={preferencesIcon} alt="preferences" />
             <span>Preferences</span>
           </li>
 
-          <li onClick={() => setSidebarOpen(false)}>
-            <img
-              src={pricingIcon}
-              alt="fees and pricing"
-            />
+          <li>
+            <img src={pricingIcon} alt="fees and pricing" />
             <span>Fees and Pricing</span>
           </li>
 
-          <li onClick={() => setSidebarOpen(false)}>
+          <li>
             <img src={auditIcon} alt="audit logs" />
             <span>Audit Logs</span>
           </li>
+
+          <li>
+            <img
+              src={systemMessagesIcon}
+              alt="system messages"
+            />
+
+            <span>System Messages</span>
+          </li>
         </ul>
+      </div>
+
+      {/* BOTTOM */}
+      <div className="sidebar__bottom">
+        <div
+          className="sidebar__logout"
+          onClick={() => {
+            localStorage.clear();
+            window.location.href = "/";
+          }}
+        >
+          <img src={logoutIcon} alt="logout" />
+
+          <span>Logout</span>
+        </div>
+
+        <p className="sidebar__version">
+          v1.2.0
+        </p>
       </div>
     </aside>
   );

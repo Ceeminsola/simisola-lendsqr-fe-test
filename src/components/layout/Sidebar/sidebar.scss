@@ -36,7 +36,7 @@
 
     gap: 10px;
 
-    height: 40px;
+    height: 46px;
 
     padding-left: 30px;
 
@@ -91,6 +91,12 @@
 
   ul {
     list-style: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
   }
 
   li {
@@ -113,6 +119,8 @@
 
       transition: opacity 0.25s ease;
     }
+
+    
 
     span {
       color: rgba(33, 63, 125, 0.6);
@@ -150,7 +158,57 @@
       }
     }
   }
+
+  &__bottom {
+  margin-top: 30px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(33, 63, 125, 0.1);
 }
+
+&__logout {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  height: 46px;
+
+  padding-left: 30px;
+
+  cursor: pointer;
+
+  transition: background 0.25s ease;
+
+  span {
+    color: #213f7d;
+
+    font-size: 16px;
+
+    font-weight: 500;
+  }
+
+  &:hover {
+    background: rgba(57, 205, 204, 0.06);
+  }
+}
+
+&__version {
+  padding-left: 30px;
+
+  margin-top: 10px;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  color: rgba(33, 63, 125, 0.6);
+}
+}
+
+
 
 /* =========================
    MOBILE SIDEBAR
