@@ -146,13 +146,19 @@ const UsersTable = ({ users, loading }: Props) => {
 
             <tbody>
               {loading ? (
-                <tr>
-                  <td colSpan={7}>
-                    <SkeletonLoader />
-                  </td>
-                </tr>
-              ) : (
-                currentUsers.map((user) => (
+                  <tr>
+                    <td colSpan={7}>
+                      <SkeletonLoader />
+                    </td>
+                  </tr>
+                ) : currentUsers.length === 0 ? (
+                  <tr>
+                    <td colSpan={7} className="empty-state">
+                      No users found
+                    </td>
+                  </tr>
+                ) : (
+                  currentUsers.map((user) => (
                   <tr key={user.id}>
                     <td>{user.organization}</td>
 
