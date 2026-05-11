@@ -5,7 +5,7 @@
   min-height: 100vh;
   width: 100%;
   background: #fbfbfb;
-  padding: 20px;
+  padding: 15px;
 
   // LEFT SIDE
   &__left {
@@ -52,13 +52,14 @@
     }
 
     p {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       color: $text;
     }
 
     input {
       width: 100%;
-      padding: 14px;
+      height: 62px;
+      padding: 16px;
       border: 1px solid $border;
       border-radius: 5px;
       margin-bottom: 20px;
@@ -71,12 +72,12 @@
       span {
         position: absolute;
         right: 15px;
-        top: 50%;
+        top: 30%;
         transform: translateY(-50%);
         font-size: 12px;
         color: $primary;
         cursor: pointer;
-        font-weight: 600;
+        font-weight: 500;
       }
     }
 
@@ -85,6 +86,7 @@
       margin-bottom: 20px;
       font-size: 12px;
       color: $primary;
+      font-weight: 500;
       text-decoration: none;
     }
 
@@ -98,10 +100,12 @@
       font-weight: 600;
       cursor: pointer;
       transition: all 0.25s ease;
+
       &:hover {
         opacity: 0.92;
         transform: translateY(-1px);
       }
+
       &:active {
         transform: scale(0.98);
       }
